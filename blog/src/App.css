@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+.black-nav{
+  display: flex;
+  background-color: black;
+  width: 100%;
+  color: white;
+  padding-left: 20px;
+}
+
+div{
+  box-sizing: border-box;
+  /* box-sizing은 박스의 크기를 어떤 것을 기준으로 계산할지 정함 */
+    /*  
+    content-box : 콘텐트 영역을 기준으로 크기를 정한다.
+    border-box : 테두리를 기준으로 크기를 정한다.
+    initial : 기본값으로 설정한다.
+    inherit : 부모 요소의 속성값을 상속받는다. 
+    */
+}
+
+.list {
+  padding-left: 20px;
+  text-align: left;
+  border-bottom: 1px solid gray;
+}
