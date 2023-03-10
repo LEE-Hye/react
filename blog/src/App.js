@@ -1,3 +1,5 @@
+/* eslint-disable */ // 코드에는 문제 없지만 warning 뜨는 경우에 입력하면 사라짐
+
 import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
@@ -13,14 +15,27 @@ function App() {
   */
   // title는 state에 보관했던 자료가 나옴
   // b는 state 변경을 도와주는 함수
+
+  let [like, likeChange] = useState(0);
+
+  function likeUp(){
+    likeChange(like+1);
+  }
+
+
+  function titleChange2(){
+    b(title[0]);
+  }
+
   return (
     <div className="App">
       <div className = "black-nav">
         <h4 style={{color : 'yellow', fontSize : '20px'}}>혜빈 블로그</h4>
       </div>
       <div className = 'list'>
-        <h4>{title[0]}</h4>
+        <h4>{title[0]} <span onClick={likeUp}>🧡</span> {like} </h4>
         <p>2023년 3월 9일</p>
+        <span onClick={titleChange2}>💌</span>
       </div>
       <div className = 'list'>
         <h4>{title[1]}</h4>
