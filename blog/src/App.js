@@ -24,7 +24,9 @@ function App() {
 
 
   function titleChange2(){
-    b(title[0]);
+    let copy = [title];
+    copy[0] = '바꿔지나?';
+    b(copy)
   }
 
   return (
