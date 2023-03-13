@@ -2,7 +2,7 @@
 
 import logo from './logo.svg';
 import './App.css';
-import {useState} from 'react';
+import { useState } from 'react';
 
 function App() {
 
@@ -18,12 +18,12 @@ function App() {
 
   let [like, likeChange] = useState(0);
 
-  function likeUp(){
-    likeChange(like+1);
+  function likeUp() {
+    likeChange(like + 1);
   }
 
 
-  function titleChange2(){
+  function titleChange2() {
     let copy = [...title];  // array/object는 원본 데이터를 보존하는 게 좋아 copy라는 새로운 변수를 설정 해주는 게 좋다
     // ...는 괄호를 벗겨주라는 문법이라 독립적인 array가 되고 화살표도 변경이 되어 state변경이 잘 된다
     copy[0] = '리액트 공부 제목 변경';
@@ -32,28 +32,48 @@ function App() {
 
   return (
     <div className="App">
-      <div className = "black-nav">
-        <h4 style={{color : 'yellow', fontSize : '20px'}}>혜빈 블로그</h4>
+      <div className="black-nav">
+        <h4 style={{ color: 'yellow', fontSize: '20px' }}>혜빈 블로그</h4>
       </div>
 
       <button onClick={titleChange2}>글수정</button>
       <button>가나다순정렬</button>
 
-      <div className = 'list'>
+      <div className='list'>
         <h4>{title[0]} <span onClick={likeUp}>🧡</span> {like} </h4>
         <p>2023년 3월 9일</p>
       </div>
-      <div className = 'list'>
+      <div className='list'>
         <h4>{title[1]}</h4>
         <p>2023년 3월 9일</p>
       </div>
-      <div className = 'list'>
+      <div className='list'>
         <h4>{title[2]}</h4>
         <p>2023년 3월 9일</p>
       </div>
+
+      <Modal></Modal>
+
       <h4>{post}</h4>
     </div>
   );
 }
+
+function Modal() {
+  return (
+    <div className='modal'>
+      <h4>제목</h4>
+      <p>날짜</p>
+      <p>상세내용</p>
+    </div>
+  )
+}
+
+// let Modal = () => {
+//   return(
+//     <div></div>
+//   )
+// }
+
 
 export default App;
